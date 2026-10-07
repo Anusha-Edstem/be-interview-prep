@@ -1,0 +1,66 @@
+HELP.md
+scratchpad/
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### Maven ###
+.mvn/wrapper/maven-wrapper.jar
+
+### OS and local tooling artefacts ###
+.DS_Store
+Thumbs.db
+*.pkg
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Local configuration and secrets ###
+application-local.yml
+application-local.yaml
+.env
+.env.local
+*.pem
+*.p12
+
+### Uploads ###
+uploads/
+
+### Claude Code local overrides ###
+# Machine-local settings and transcripts. Everything else under .claude/ is the
+# harness itself and is committed, because .github/workflows/harness-check.yml
+# verifies it on every pull request.
+.claude/settings.local.json
+
+### Claude Code workflow scratch files ###
+# Intermediate bodies the skills write, post via gh, then delete.
+# Ignored so an interrupted run never leaves them staged.
+issue-body.md
+pr-body.md
+review-body.md
+reply-body.md

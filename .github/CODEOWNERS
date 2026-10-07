@@ -1,0 +1,10 @@
+/CLAUDE.md @adithya-s-edstem
+/.claude/ @adithya-s-edstem
+/.gitleaks.toml @adithya-s-edstem
+/.github/CODEOWNERS @adithya-s-edstem
+/.github/PULL_REQUEST_TEMPLATE.md @adithya-s-edstem
+/.github/workflows/claude-pr-review.yml @adithya-s-edstem
+
+# Project-specific
+/CLAUDE.md @Anusha-Edstem
+/.claude/ @Anusha-Edstem

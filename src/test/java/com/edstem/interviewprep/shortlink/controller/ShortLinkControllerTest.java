@@ -8,6 +8,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.edstem.interviewprep.common.security.JsonAccessDeniedHandler;
+import com.edstem.interviewprep.common.security.JsonAuthenticationEntryPoint;
+import com.edstem.interviewprep.common.security.SecurityConfig;
 import com.edstem.interviewprep.shortlink.dto.request.CreateShortLinkRequest;
 import com.edstem.interviewprep.shortlink.dto.response.ShortLinkResponse;
 import com.edstem.interviewprep.shortlink.dto.response.ShortLinkStatsResponse;
@@ -20,10 +23,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+@Import({SecurityConfig.class, JsonAuthenticationEntryPoint.class, JsonAccessDeniedHandler.class})
 @WebMvcTest({ShortLinkController.class, ShortLinkRedirectController.class})
 class ShortLinkControllerTest {
 

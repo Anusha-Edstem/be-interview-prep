@@ -19,3 +19,7 @@ spring:
 app:
   short-link:
     base-url: http://short.test
+  auth:
+    secret: ${JWT_SECRET:test-only-signing-key-not-used-outside-tests-0123456789}
+    issuer: be-interview-prep-test
+    token-lifetime: 15m

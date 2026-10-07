@@ -14,6 +14,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.edstem.interviewprep.common.dto.response.PageResponse;
+import com.edstem.interviewprep.common.security.JsonAccessDeniedHandler;
+import com.edstem.interviewprep.common.security.JsonAuthenticationEntryPoint;
+import com.edstem.interviewprep.common.security.SecurityConfig;
 import com.edstem.interviewprep.task.dto.request.CreateTaskRequest;
 import com.edstem.interviewprep.task.dto.response.TaskResponse;
 import com.edstem.interviewprep.task.entity.TaskStatus;
@@ -27,11 +30,13 @@ import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+@Import({SecurityConfig.class, JsonAuthenticationEntryPoint.class, JsonAccessDeniedHandler.class})
 @WebMvcTest(TaskController.class)
 class TaskControllerTest {
 
